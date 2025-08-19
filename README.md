@@ -1,23 +1,4 @@
----
-license: cc-by-nc-4.0
-task_categories:
-- image-classification
-language:
-- en
-tags:
-- lithology
-- geology
-- rock
-- drill core
-- core images
-- lithology identification
-- lithology classification
-pretty_name: Drill Core Image Dataset (DCID)
-size_categories:
-- 10K<n<100K
----
-
-# Dataset Card for Drill Core Image Dataset (DCID)
+# Drill Core Image Dataset (DCID)
 
 ## Dataset Details
 
