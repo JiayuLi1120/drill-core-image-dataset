@@ -1,3 +1,22 @@
+---
+license: cc-by-nc-4.0
+task_categories:
+- image-classification
+language:
+- en
+tags:
+- lithology
+- geology
+- rock
+- drill core
+- core images
+- lithology identification
+- lithology classification
+pretty_name: Drill Core Image Dataset (DCID)
+size_categories:
+- 10K<n<100K
+---
+
 # Dataset Card for Drill Core Image Dataset (DCID)
 
 ## Dataset Details
@@ -56,6 +75,60 @@ This fine-grained version is designed to assess model generalization under compl
 
 ---
 
+## Usage
+
+### Step 1: Download and extract
+Download the `DCID.zip` archive from [Hugging Face](https://huggingface.co/datasets/168sir/drill-core-image-dataset) and extract it:
+
+```bash
+unzip DCID.zip -d ./DCID
+````
+
+This will give you the following folders:
+
+* `DCID-512-7/` and `noise-512-7/`
+* `DCID-512-35/` and `noise-512-35/`
+
+---
+
+### Step 2: Build custom dataset versions
+
+We provide a script **`build_dcid_dataset.py`** to generate different dataset variants.
+
+Example: Create a **32×32 resolution, 7 classes, 40% RWDA (train set only)** dataset:
+
+```bash
+python build_dcid_dataset.py \
+    --root ./DCID \
+    --R 32 \
+    --C 7 \
+    --L 0.4 \
+    --I T \
+    --out_dir ./output
+```
+
+This generates a new dataset at:
+
+```
+./output/DCID-32-7-0.4-T/
+```
+
+---
+
+### Script Parameters
+
+* **`R`**: target resolution (32, 64, 128, 256)
+* **`C`**: number of categories (7 or 35)
+* **`L`**: RWDA level (0.0–0.4)
+* **`I`**: injection scope:
+
+  * `N`: none
+  * `T`: train set only
+  * `E`: test set only
+  * `A`: all (train + test)
+
+---
+
 ## Citation
 
 If you use this dataset in your work, please cite:
@@ -69,3 +142,4 @@ If you use this dataset in your work, please cite:
   issn = {1995-8226},
   doi = {10.1016/j.petsci.2025.04.013}
 }
+
