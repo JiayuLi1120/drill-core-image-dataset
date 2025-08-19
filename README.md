@@ -26,7 +26,7 @@ Variants are generated in the format `DCID-R-C-L-I`, where:
 
 ### Overall Dataset Statistics
 
-![Overall Dataset](./Fig3.svg)
+![Overall Dataset](./Fig5.svg)
 
 This figure shows the total image count and distribution across various DCID variants.
 
@@ -34,7 +34,7 @@ This figure shows the total image count and distribution across various DCID var
 
 ### DCID-7: 7 Lithology Categories
 
-![DCID-7 Overview](./Fig4.svg)
+![DCID-7 Overview](./Fig3.svg)
 
 DCID-7 is balanced across 7 lithologies, each with 5,000 512×512 images.  
 It serves as a lightweight benchmark for fast training and ablation studies.
@@ -43,7 +43,7 @@ It serves as a lightweight benchmark for fast training and ablation studies.
 
 ### DCID-35: 35 Lithology Categories
 
-![DCID-35 Overview](./Fig5.svg)
+![DCID-35 Overview](./Fig4.svg)
 
 DCID-35 is designed for fine-grained lithology recognition under class imbalance and inter-class visual similarity.
 
